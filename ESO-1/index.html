@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Çevreyi Koru — Küçük Adımlar, Büyük Etki</title>
+  <style>
+    :root{ --bg:#f4fbf6; --card:#ffffff; --accent:#2b8a6f; --muted:#6b6b6b; --glass: rgba(255,255,255,0.6);}    
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:linear-gradient(180deg,#f4fbf6 0%, #e8f7ef 100%); color:#102023}
+    header{background:var(--accent); color:white; padding:28px 18px; display:flex; align-items:center; justify-content:space-between}
+    header h1{margin:0;font-size:20px}
+    nav a{color:rgba(255,255,255,0.9); text-decoration:none; margin-left:14px; font-weight:600}
+    .container{max-width:980px;margin:28px auto;padding:0 16px}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:center}
+    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(20,40,30,0.08)}
+    .hero h2{margin-top:0}
+    .cta{display:inline-block;background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+    .tip{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(43,138,111,0.06), rgba(43,138,111,0.02));border:1px solid rgba(43,138,111,0.06)}
+    .tip h3{margin:0 0 8px 0;font-size:16px}
+    footer{margin-top:26px;padding:16px;text-align:center;color:var(--muted)}
+    /* mini quiz */
+    .quiz q{display:block;margin-bottom:10px}
+    .btn{cursor:pointer;border:0;padding:8px 12px;border-radius:8px}
+    .btn-outline{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+    .small{font-size:14px;color:var(--muted)}
+    /* responsive */
+    @media (max-width:880px){.hero{grid-template-columns:1fr} .hero > .card:nth-child(2){order:2}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Çevreyi Koru</h1>
+    <nav>
+      <a href="#neden">Neden?</a>
+      <a href="#ipuclari">İpuçları</a>
+      <a href="#eylem">Eylem</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h2>Küçük Adımlar, Büyük Fark</h2>
+        <p>Günlük hayatımızdaki basit değişiklikler bile doğayı korumaya yardımcı olabilir. Bu sayfada enerji tasarrufu, atık azaltma ve sürdürülebilir alışkanlıklar hakkında bilgi ve pratik öneriler bulacaksınız.</p>
+        <a class="cta" href="#ipuclari">Hemen Başla</a>
+
+        <div id="neden" style="margin-top:18px">
+          <h3>Neden çevre korumalıyız?</h3>
+          <ul>
+            <li>Hava, su ve toprak sağlığını korumak için.</li>
+            <li>Biyolojik çeşitliliği ve ekosistemleri sürdürmek için.</li>
+            <li>Gelecek nesillere yaşanabilir bir dünya bırakmak için.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="small">Hızlı Gerçek</h3>
+        <p style="font-weight:700; font-size:20px; margin:6px 0">Geri dönüşüm + Enerji tasarrufu = Daha düşük karbon ayak izi</p>
+        <p class="small">Her ay küçük bir alışkanlık değişikliği, yılda büyük bir etki yaratabilir.</p>
+
+        <div style="margin-top:12px">
+          <label class="small">İklim eylemine katıl?</label>
+          <div style="margin-top:8px; display:flex; gap:8px">
+            <button class="btn btn-outline" onclick="pledge('Geri dönüştürüyorum')">Geri dönüştüreceğim</button>
+            <button class="btn" style="background:var(--accent); color:white" onclick="pledge('Toplu taşıma')">Toplu taşıma</button>
+          </div>
+          <p id="pledgeMsg" class="small" style="margin-top:10px"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ipuclari" style="margin-top:22px">
+      <h2>Günlük İpuçları</h2>
+      <div class="tips">
+        <div class="tip">
+          <h3>1. Tek kullanımlıkları azalt</h3>
+          <p class="small">Bez poşet, tekrar kullanılabilir su matarası ve kahve kupası kullan.</p>
+        </div>
+        <div class="tip">
+          <h3>2. Enerji tasarrufu</h3>
+          <p class="small">LED ampuller kullan, kullanılmayan cihazların fişini çek.</p>
+        </div>
+        <div class="tip">
+          <h3>3. Su tasarrufu</h3>
+          <p class="small">Kısa duşlar, damlayan muslukları tamir et.</p>
+        </div>
+        <div class="tip">
+          <h3>4. Akıllı alışveriş</h3>
+          <p class="small">Mevsiminde ve yerel ürünleri tercih et, ambalajı az ürün al.</p>
+        </div>
+        <div class="tip">
+          <h3>5. Geri dönüşüm</h3>
+          <p class="small">Atıkları ayır, elektronik atıkları yetkili noktalara ver.</p>
+        </div>
+        <div class="tip">
+          <h3>6. Bitkilendir</h3>
+          <p class="small">Balkona saksı, bahçeye ağaç dik. Bitkiler karbonu emer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="eylem" style="margin-top:22px">
+      <h2>Küçük Quiz: Ne Kadar Çevrecisin?</h2>
+      <div class="card quiz">
+        <p class="small">Aşağıdaki sorulara verdiğin yanıtlarla çevre alışkanlıklarını test et.</p>
+        <div>
+          <q>Her gün tek kullanımlık su matarası/şişe kullanıyor musun?</q>
+          <div>
+            <label><input type="radio" name="q1" value="0"> Evet</label>
+            <label style="margin-left:8px"><input type="radio" name="q1" value="1"> Hayır</label>
+          </div>
+        </div>
+
+        <div style="margin-top:10px">
+          <q>Elektronik cihazlarını kullanmadığında fişten çekiyor musun?</q>
+          <div>
+            <label><input type="radio" name="q2" value="1"> Evet</label>
+            <label style="margin-left:8px"><input type="radio" name="q2" value="0"> Hayır</label>
+          </div>
+        </div>
+
+        <div style="margin-top:10px">
+          <q>Alışverişte bez çanta kullanıyor musun?</q>
+          <div>
+            <label><input type="radio" name="q3" value="1"> Evet</label>
+            <label style="margin-left:8px"><input type="radio" name="q3" value="0"> Hayır</label>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <button class="btn" onclick="grade()">Puanımı Gör</button>
+          <p id="score" style="margin-top:8px; font-weight:700"></p>
+        </div>
+      </div>
+
+      <div style="margin-top:18px" class="card">
+        <h3>Yerel Eylem Fikirleri</h3>
+        <ul>
+          <li>Mahalle temizliği organize et.</li>
+          <li>Okullarda çevre sunumu yap.</li>
+          <li>Yerel yönetimlere sürdürülebilir projeler öner.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>Bu sayfa eğitici amaçlı hazırlanmıştır. Daha fazla içerik veya düzenleme istersen söyle — birlikte geliştiririz!</p>
+      <p style="font-size:13px;color:var(--muted)">© Çevreyi Koru — Basit ipuçları ile büyük adımlar</p>
+    </footer>
+  </main>
+
+  <script>
+    function pledge(text){
+      const el = document.getElementById('pledgeMsg');
+      el.textContent = 'Taahhüt: ' + text + ' — teşekkürler! 🎉';
+      setTimeout(()=> el.textContent='',4000);
+    }
+
+    function grade(){
+      const q1 = document.querySelector('input[name=q1]:checked');
+      const q2 = document.querySelector('input[name=q2]:checked');
+      const q3 = document.querySelector('input[name=q3]:checked');
+      if(!q1 || !q2 || !q3){
+        alert('Lütfen tüm soruları yanıtla.'); return;
+      }
+      const score = parseInt(q1.value)+parseInt(q2.value)+parseInt(q3.value);
+      const el = document.getElementById('score');
+      if(score === 3) el.textContent = 'Harika! Çok çevrecisin 🌿 (3/3)';
+      else if(score === 2) el.textContent = 'İyi gidiyorsun — birkaç adım daha! (2/3)';
+      else if(score === 1) el.textContent = 'Başlangıç iyi, ama daha fazlası mümkün. (1/3)';
+      else el.textContent = 'Fırsat alanı: küçük değişikliklerle başlayabilirsin. (0/3)';
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Two-Column Layout</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+    <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-10 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+
+        <!-- Left Column: Image -->
+        <div class="w-full md:w-1/2 rounded-xl overflow-hidden shadow-lg">
+            <!-- The image will be responsive, scaling with its container -->
+            <img 
+                src="https://placehold.co/1000x800/2563eb/ffffff?text=Image+Placeholder" 
+                alt="Placeholder image for a two-column layout" 
+                class="w-full h-auto object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+            >
+        </div>
+
+        <!-- Right Column: Text Content -->
+        <div class="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left space-y-4">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+                Create Beautiful, Responsive Layouts
+            </h1>
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+                Using Flexbox and Tailwind CSS, you can effortlessly build flexible, responsive components that adapt to any screen size. This layout stacks content vertically on mobile devices for optimal readability and transitions to a horizontal two-column design on desktops.
+            </p>
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+                The key is to use utility classes like `flex-col`, `md:flex-row`, and `w-full` to control the direction and size of the elements at different breakpoints.
+            </p>
+            <a href="#" class="inline-block self-center md:self-start bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:-translate-y-1">
+                Learn More
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
